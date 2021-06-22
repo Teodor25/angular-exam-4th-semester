@@ -1,0 +1,64 @@
+.edit-post-container {
+    width: 50% !important; 
+}
+
+.edit-post-form {
+    padding: 30px; 
+}
+
+.title {
+    font-size: x-large;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #50509f;
+}
+
+.input-field {
+    width: 100%; 
+}
+
+#text {
+    height: 150px; 
+}
+
+.arrow-left {
+  border: solid #50509f;
+  border-width: 0px 3px 3px 0;
+  display: inline-block;
+  padding: 5px;
+  margin: 6px 3px 4px 4px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.back-btn {
+    display: flex;
+    margin: 50px 50px 0 50px; 
+    color: #50509f; 
+    transition: .5s;
+}
+
+.back-btn:hover {
+    transform: scale(1.01); 
+}
+
+.back-btn-name {
+    padding: 3px 0px 0px 10px;
+}
+
+.mat-raised-button.mat-primary {
+    background-color: green;
+}
+
+.mat-stroked-button.mat-warn, .mat-stroked-button.mat-basic {
+    border: 1px solid currentColor;
+}
+
+.mat-stroked-button.mat-warn {
+    color: rgb(180, 0, 0); 
+}
+
+.btn {
+    margin: 10px; 
+    width: 45%;
+}

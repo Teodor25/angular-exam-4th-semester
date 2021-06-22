@@ -4,6 +4,7 @@ import { combineAll } from 'rxjs/operators';
 import { ChatComponent } from './pages/chat/chat.component';
 import { CollectionsComponent } from './pages/collections/collections.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { EditPostComponent } from './pages/edit-post/edit-post.component';
 import { EventsComponent } from './pages/events/events.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { PostsComponent } from './pages/posts/posts.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'publicProfile', component: PublicProfileComponent },
   { path: 'events', component: EventsComponent },
   { path: 'posts', component: PostsComponent },
+  { path: 'editPost', component: EditPostComponent },
   { path: 'collections', component: CollectionsComponent },
   { path: 'chat', component: ChatComponent },
   { path: 'volunteers', component: VolunteersComponent },

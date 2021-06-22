@@ -10,7 +10,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list'; 
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule} from '@angular/material/input';
 
 //Components
 import { AppComponent } from './app.component';
@@ -22,6 +25,9 @@ import { CollectionsComponent } from './pages/collections/collections.component'
 import { ChatComponent } from './pages/chat/chat.component';
 import { VolunteersComponent } from './pages/volunteers/volunteers.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { EditPostComponent } from './pages/edit-post/edit-post.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,19 +38,25 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     CollectionsComponent,
     ChatComponent,
     VolunteersComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSliderModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

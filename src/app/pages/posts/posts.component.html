@@ -1,9 +1,65 @@
-<div class="posts-container">
-    <div class="posts-content">
-        <div class="posts-header">
-            <h2>Posts</h2>
-            <button mat-button color="primary" class="new-post-btn">New post</button>
-        </div>
-        
+<div class="page-container">
+  <div class="posts-content">
+    <div class="posts-header">
+      <h2>Posts</h2>
+      <button mat-raised-button color="primary" class="new-post-btn">
+        New post
+        <img src="/assets/icons/add_circle.svg" alt="" class="icon-new-post" />
+      </button>
     </div>
+    <div class="list-container">
+      <div class="row">
+        <div class="col-md-4 title">
+          <p><strong>Title</strong></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Created</strong></p>
+        </div>
+        <div class="col-md-1">
+          <p><strong>Type</strong></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Activity</strong></p>
+        </div>
+        <div class="col-md-1">
+          <p><strong>Status</strong></p>
+        </div>
+        <div class="col-md-2">
+          <p><strong>Action</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let post of posts" class="post">
+      <div class="row">
+        <div class="col-md-4 title">
+          <p>{{ post.title }}</p>
+        </div>
+        <div class="col-md-2">
+          <p>{{ post.publishedDate }}</p>
+        </div>
+        <div class="col-md-1">
+          <p>Text</p>
+        </div>
+        <div class="col-md-2 activity-container">
+          <p class="activity">
+            <img src="/assets/icons/thumb_up.svg" alt="" class="icon-sm" />
+            {{ post.likes.length }}
+          </p>
+          <p class="activity">
+            <img src="/assets/icons/comment.svg" alt="" class="icon-sm" />
+            {{ post.comments.length }}
+          </p>
+        </div>
+        <div class="col-md-1">
+          <p [ngClass]="post.published ? 'published' : 'draft'">
+            {{ post.published ? "published" : "draft" }}
+          </p>
+        </div>
+        <div class="col-md-2">
+          <button mat-button class="action-btn" color="primary" (click)="editPost(post.id);">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

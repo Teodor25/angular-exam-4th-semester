@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '../../services/posts.service'; 
+import { Post } from '../../data/entities/Post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-posts',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
+  posts: Post[] = []; 
+
+  constructor(private postService: PostsService, private router: Router) { }
 
   ngOnInit(): void {
+    this.postService
+      .getPosts()
+      .subscribe((posts) => (this.posts = posts));
+  }
+
+  likes(userIds: any): number {
+    return userIds.length; 
+  }
+
+  editPost(id: number) {
+     this.router.navigate(['editPost', {postId: id}])
   }
 
 }

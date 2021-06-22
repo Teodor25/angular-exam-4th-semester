@@ -1,0 +1,47 @@
+<a href="/posts" class="back-btn">
+  <span class="arrow-left"></span>
+  <span class="back-btn-name">Back</span>
+</a>
+
+<div class="page-container edit-post-container">
+  <form (ngSubmit)="onSubmit()" class="edit-post" class="edit-post-form">
+    <div class="title">Edit post</div>
+
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label>Title</mat-label>
+      <input
+        type="text"
+        matInput
+        [(ngModel)]="title"
+        id="title"
+        [value]="post.title"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="input-field">
+      <mat-label>Text</mat-label>
+      <textarea
+        type="textarea"
+        matInput
+        [(ngModel)]="text"
+        id="text"
+        [value]="post.text"
+      >
+      </textarea>
+    </mat-form-field>
+
+    <hr />
+
+    <div class="actions">
+      <button mat-stroked-button color="basic" class="btn">
+        Save draft
+      </button>
+      <button mat-raised-button color="primary" class="btn">
+        Publish post / Save changes 
+      </button>
+      <button mat-stroked-button color="warn" class="btn">
+        Delete post
+      </button>
+    </div>
+  </form>
+</div>

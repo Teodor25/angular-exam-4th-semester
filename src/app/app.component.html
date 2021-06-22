@@ -1,17 +1,42 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="/dashboard">Dashboard</a>
-      <a mat-list-item href="/publicProfile">Public profile</a>
-      <a mat-list-item href="/events">Events</a>
-      <a mat-list-item href="/posts">Posts</a>
-      <a mat-list-item href="/collections">Collections</a>
-      <a mat-list-item href="/chat">Chat</a>
-      <a mat-list-item href="/volunteers">Volunteers</a>
+    <mat-nav-list class="nav-options">
+      <a mat-list-item href="/dashboard" [ngClass]="hasRoute('/dashboard')? 'active':'' ">
+        <img src="/assets/icons/insert_chart.svg" alt="" class="icon" />
+        Dashboard</a
+      >
+      <a mat-list-item href="/publicProfile" [ngClass]="hasRoute('/publicProfile')? 'active':'' ">
+        <img src="/assets/icons/person_pin.svg" alt="" class="icon" />Public
+        profile</a
+      >
+      <a mat-list-item href="/events" [ngClass]="hasRoute('/events')? 'active':'' ">
+        <img src="/assets/icons/event_note.svg" alt="" class="icon" /> Events</a
+      >
+      <a mat-list-item href="/posts" [ngClass]="hasRoute('/posts')? 'active':'' ">
+        <img src="/assets/icons/library.svg" alt="" class="icon" /> Posts</a
+      >
+      <a mat-list-item href="/collections" [ngClass]="hasRoute('/collections')? 'active':'' ">
+        <img src="/assets/icons/view_day.svg" alt="" class="icon" />
+        Collections</a
+      >
+      <a mat-list-item href="/chat" [ngClass]="hasRoute('/chat')? 'active':'' ">
+        <img src="/assets/icons/comment.svg" alt="" class="icon" /> Chat</a
+      >
+      <a mat-list-item href="/volunteers" [ngClass]="hasRoute('/volunteers')? 'active':'' ">
+        <img
+          src="/assets/icons/person_pin.svg"
+          alt=""
+          class="icon"
+        />Volunteers</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -21,15 +46,15 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset$ | async"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span class="nav-content">
-        <img src="assets/logo/logo.png" alt="logo" class="logo">        
+        <img src="assets/logo/logo.png" alt="logo" class="logo" />
       </span>
     </mat-toolbar>
-    
-    <router-outlet></router-outlet>
 
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
